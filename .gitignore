@@ -1,0 +1,11 @@
+# Project Info
+node_modules
+dist
+.env
+.env.local
+.DS_Store
+*.local
+
+# Supabase secrets - NEVER commit these
+supabase/.branches
+supabase/.temp
