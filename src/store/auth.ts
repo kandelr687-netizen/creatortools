@@ -20,7 +20,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   setLoading: (loading) => set({ loading }),
 
   fetchProfile: async () => {
-    const { data: { user } } = await supabase.auth.getUser()
+    const { data: { user }, error: userError } = await supabase.auth.getUser()
+    if (userError) {
+      set({ profile: null, loading: false })
+      throw userError
+    }
     if (!user) {
       set({ profile: null, loading: false })
       return null
@@ -29,9 +33,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       .from('profiles')
       .select('*')
       .eq('user_id', user.id)
-      .single()
+      .maybeSingle()
     if (error || !data) {
       set({ profile: null, loading: false })
+      if (error) throw error
       return null
     }
     set({ profile: data as Profile, loading: false })

@@ -27,7 +27,8 @@ export function LoginPage() {
 
       const profile = await fetchProfile()
       if (!profile) {
-        showError('Account setup incomplete. Please contact support.')
+        await supabase.auth.signOut()
+        showError('Your account profile is missing. Apply the latest Supabase migration, then try again.')
         return
       }
       if (profile.status !== 'active') {
