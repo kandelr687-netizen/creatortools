@@ -48,6 +48,12 @@ export function AdminRoute() {
 export function GuestRoute() {
   const { profile, loading } = useAuthStore()
 
+  useEffect(() => {
+    if (loading) {
+      useAuthStore.getState().fetchProfile()
+    }
+  }, [loading])
+
   if (loading) return <PageLoader />
 
   if (profile) {
