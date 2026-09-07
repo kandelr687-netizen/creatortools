@@ -50,8 +50,8 @@ export function AdminLayout() {
     <div className="flex flex-col h-full bg-slate-900 text-slate-100">
       <div className="p-6 flex items-center justify-between border-b border-slate-800">
         <NavLink to="/admin" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <Shield className="h-5 w-5 text-white" />
+          <div className="h-8 w-8 rounded-lg overflow-hidden bg-primary flex items-center justify-center">
+            <img src="/favicon.svg" alt="Creators Point" className="h-full w-full object-cover" />
           </div>
           <div>
             <span className="font-bold text-lg leading-none">Creators Point</span>
@@ -136,8 +136,8 @@ export function AdminLayout() {
         {/* Mobile top bar */}
         <header className="lg:hidden sticky top-0 z-30 bg-slate-900 text-white px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <Shield className="h-5 w-5 text-white" />
+            <div className="h-8 w-8 rounded-lg overflow-hidden bg-primary flex items-center justify-center">
+              <img src="/favicon.svg" alt="Creators Point" className="h-full w-full object-cover" />
             </div>
             <span className="font-bold">Admin Panel</span>
           </div>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
-  Zap,
   Video,
   Upload,
   ClipboardCheck,
@@ -25,8 +24,8 @@ export function LandingPage() {
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-lg bg-primary flex items-center justify-center">
-              <Zap className="h-5 w-5 text-white" />
+            <div className="h-9 w-9 rounded-lg overflow-hidden bg-primary flex items-center justify-center">
+              <img src="/favicon.svg" alt="Creators Point" className="h-full w-full object-cover" />
             </div>
             <span className="font-bold text-lg">Creators Point</span>
           </div>

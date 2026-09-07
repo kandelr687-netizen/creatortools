@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import { Zap } from 'lucide-react'
 
 export function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,8 +6,8 @@ export function AuthLayout({ children }: { children: React.ReactNode }) {
       {/* Left branding panel */}
       <div className="lg:w-1/2 bg-gradient-to-br from-primary via-indigo-600 to-violet-700 text-white flex flex-col justify-between p-8 lg:p-16">
         <NavLink to="/" className="flex items-center gap-2">
-          <div className="h-10 w-10 rounded-lg bg-white/10 backdrop-blur flex items-center justify-center">
-            <Zap className="h-6 w-6" />
+          <div className="h-10 w-10 rounded-lg overflow-hidden bg-white/10 backdrop-blur flex items-center justify-center">
+            <img src="/favicon.svg" alt="Creators Point" className="h-full w-full object-cover" />
           </div>
           <span className="font-bold text-2xl">Creators Point</span>
         </NavLink>
