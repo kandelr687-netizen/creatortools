@@ -38,7 +38,7 @@ export function LoginPage() {
       }
       navigate(profile.role === 'admin' ? '/admin' : (from || '/dashboard'))
     } catch (err) {
-      showError(err instanceof Error ? err.message : 'Login failed')
+      showError(err instanceof Error ? err.message : 'Unable to log in. Please check your email and password.')
     } finally {
       setLoading(false)
     }

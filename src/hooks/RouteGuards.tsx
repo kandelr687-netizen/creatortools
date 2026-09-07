@@ -50,7 +50,9 @@ export function GuestRoute() {
 
   useEffect(() => {
     if (loading) {
-      useAuthStore.getState().fetchProfile()
+      useAuthStore.getState().fetchProfile().catch(() => {
+        useAuthStore.getState().setLoading(false)
+      })
     }
   }, [loading])
 
